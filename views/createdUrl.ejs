@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Created Urls</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+        <div class="container mt-5">
+            <h2 class="text-center mb-4 text-info">Created URLs</h2>
+            <table class="table table-bordered table-hover text-center bg-dark text-info">
+                <thead class="bg-dark text-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Short ID</th>
+                        <th>Original URL</th>
+                        <th>Use</th>
+                        <th>Created On</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% urls.forEach((url, index) => { %>
+                        <tr>
+                            <td><%= index+1 %></td>
+                            <td><%= url.shortId %></td>
+                            <td><%= url.originalUrl %></td>
+                            <td><i>localhost:6969/url/<%= url.shortId%></i></td>
+                            <td><%= url.date %></td>
+                        </tr>
+                    <% }) %>    
+                </tbody>
+            </table>                
+            <a href="/" class="btn btn-outline-warning mt-2">Go back</a>
+        </div>
+    <%- include('./partials/script') %>
+</body>
+</html>

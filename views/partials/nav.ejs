@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-dark shadow sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand text-info fw-bolder fs-2"> ShortLinker</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <% if (locals.user) { %>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active text-info fs-5 ms-5" aria-current="page" href="/">Home</a>
+            </li>
+          </ul>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-info fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= locals.user.email %>
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li><a class="dropdown-item text-warning bg-dark" href="/user/logout">Logout</a></li>
+            </ul>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/signup">Create Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/signin">Signin</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<% if (locals.error) { %>
+  <div class="container mt-4">
+    <div class="alert alert-danger fs-5" role="alert"><%= locals.error %></div>
+  </div>
+<% } %>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <% if (!locals.user) { %>
+        <!-- Hero Section -->
+    <header class="bg-success text-white text-center py-5">
+        <div class="container">
+            <h1>🚀 Shorten. Share. Track.</h1>
+            <p class="lead">Make your links cleaner, shorter, and more shareable in just one click!</p>
+        </div>
+    </header>
+
+    <!-- URL Shortener Section -->
+    <section class="container text-center my-5 text-secondary">
+        <h2>🔗 Shorten Your Link</h2>
+        <p><p>Click the button below to get a short, trackable link instantly!</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <a class="btn btn-outline-warning w-100 mb-5 mt-3" href="/signup">Generate Short Link!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container text-center my-5 text-secondary">
+        <h2>Why Choose ShortLinker?</h2>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <h4>✅ Instant Shortening</h4>
+                <p>Convert long URLs into short, easy-to-share links.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>📊 Track Clicks</h4>
+                <p>Monitor how your links perform with real-time analytics.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>🔒 Safe & Secure</h4>
+                <p>Your links are protected and never expire.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>🎨 Custom Links</h4>
+                <p>Personalize your short URLs for better branding.</p>
+            </div>
+        </div>
+    </section>
+    <% } else { %>
+        <div class="container mt-5">
+            <div class="text-center mb-4">
+                <h1 class="text-primary fw-bold">Welcome to <span class="text-warning">ShortLinker!</span></h1>
+                <p class="lead text-secondary">Your trusted URL shortener, making your links easy to share.</p>
+            </div>
+
+            <div class="row mt-2 mb-4 d-flex justify-content-between">
+                <div class="col-auto mx-3">
+                    <a href="/url" class="btn btn-lg btn-gradient bg-primary text-white shadow-lg px-4 py-2 rounded-pill">
+                        Start Shortening URLs
+                    </a>
+                </div>
+                <div class="col-auto mx-3">
+                    <a href="url/allurls" class="btn btn-outline-warning mt-2">
+                        Go to all created URLs
+                    </a>
+                </div>
+            </div>
+        
+            <!-- What is a URL Shortener? Section -->
+            <div class="row mb-5 p-4 bg-dark rounded">
+                <div class="col-12">
+                    <h3 class="text-success fw-bold">What is a URL Shortener?</h3>
+                    <p class="text-secondary">A URL shortener is a service that transforms long, complex URLs into shorter, 
+                    simpler links that are easier to share. This makes it more convenient for sharing links on social media, 
+                    in emails, or even on print materials.</p>
+                    <p class="text-secondary">Shortened URLs take up less space and look more aesthetically pleasing, which encourages 
+                    more clicks and engagement.</p>
+                </div>
+            </div>
+        
+            <!-- What does ShortLinker do? Section -->
+            <div class="row p-2 bg-dark rounded mb-4">
+                <div class="col-12">
+                    <h3 class="text-danger fw-bold">What does ShortLinker do?</h3>
+                    <p class="text-secondary">ShortLinker helps you quickly convert your long URLs into short, user-friendly links. 
+                    Whether you're sharing on social media, sending via email, or embedding in content, ShortLinker makes your 
+                    URLs compact and more shareable.</p>
+                    <ul class="list-group list-group-flush border-secondary">
+                        <li class="list-group-item bg-transparent text-secondary border-secondary"><strong class="text-info">Easy to Use:</strong> Just paste your long URL and click 
+                            <span class="badge bg-primary">Shorten</span>.</li>
+                        <li class="list-group-item bg-transparent text-secondary border-secondary"><strong class="text-warning">Customizable:</strong> Choose a unique short link or 
+                            let us generate one for you.</li>
+                        <li class="list-group-item bg-transparent text-secondary border-secondary"><strong class="text-success">Trackable:</strong> Monitor your link's click performance 
+                            with our built-in analytics.</li> 
+                    </ul>
+                    <p class="mt-3 text-dark">Start shortening your URLs now and make sharing simpler and more efficient!</p>
+                </div>
+            </div>
+        </div>
+    <%}%>
+    <%- include('./partials/script') %>
+</body>
+</html>

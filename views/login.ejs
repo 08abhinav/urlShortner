@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <style>
+        #email::placeholder,
+        #password::placeholder {
+            color: rgba(23, 162, 184, 0.5);
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container d-flex justify-content-center align-items-center mt-5">
+        <form action="/user/login" method="post" class="w-50 p-4 rounded shadow-sm bg-dark mb-5">
+            <h3 class="text-center mb-4 text-info"><u>Login</u></h3>
+
+            <div class="mb-3">
+                <label for="email" class="form-label fs-4 text-info">Email address</label>
+                <input type="email" class="form-control bg-dark shadow-none" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label fs-4 text-info">Password</label>
+                <input type="password" class="form-control bg-dark shadow-none text-info" name="password" id="password" placeholder="Enter your password" required>
+                
+            </div>
+
+            <div class="py-3">
+                <button type="submit" class="btn btn-outline-warning fs-5 ">Submit</button>
+            </div>
+            <div class="mt-4">
+              <p class="text-center fs-5 text-secondary">Don't have an account?<a href="/signup" class="btn btn-link fs-5 text-warning">Register</a></p>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/script') %>
+</body>
+</html>
